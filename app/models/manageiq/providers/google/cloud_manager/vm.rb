@@ -26,8 +26,8 @@ class ManageIQ::Providers::Google::CloudManager::Vm < ManageIQ::Providers::Cloud
   def disconnect_inv
     super
 
-    # Mark all instances no longer found as unknown
-    self.raw_power_state = "unknown"
+    # Mark all instances no longer found as missing
+    self.raw_power_state = "missing"
     save
   end
 
@@ -43,8 +43,10 @@ class ManageIQ::Providers::Google::CloudManager::Vm < ManageIQ::Providers::Cloud
     case raw_power_state.downcase
     when /running/, /starting/
       "on"
-    when /terminated/, /stopping/
+    when /stopping/
       "off"
+    when /terminated/, /missing/ # missing state is the same as terminated
+      "terminated"
     else
       "unknown"
     end
