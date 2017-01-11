@@ -57,7 +57,6 @@ gem "default_value_for",              "~>3.0.2"
 gem "draper",                         "~>3.0.0.pre1"
 gem "elif",                           "=0.1.0",        :require => false
 gem "fast_gettext",                   "~>1.2.0"
-gem "fog-google",                     "~>0.3.0",       :require => false
 gem "fog-vcloud-director",            "~>0.1.8",       :require => false
 gem "gettext_i18n_rails",             "~>1.7.2"
 gem "gettext_i18n_rails_js",          "~>1.1.0"
@@ -108,7 +107,7 @@ gem "websocket-driver",               "~>0.6.3"
 # Modified gems (forked on Github)
 gem "foreman_api_client",             ">=0.1.0",   :require => false, :git => "https://github.com/ManageIQ/foreman_api_client.git", :branch => "master"
 gem "ruport",                         "=1.7.0",                       :git => "https://github.com/ManageIQ/ruport.git", :tag => "v1.7.0-3"
-
+gem "fog-google",                     "~>0.5.0",   :require => false, :git => "https://github.com/fog/fog-google", :branch => "master"
 # In 1.9.3: Time.parse uses british version dd/mm/yyyy instead of american version mm/dd/yyyy
 # american_date fixes this to be compatible with 1.8.7 until all callers can be converted to the 1.9.3 format prior to parsing.
 # See miq_expression_spec Date/Time Support examples.
